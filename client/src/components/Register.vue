@@ -1,24 +1,29 @@
 <template>
-  <div>
-    <h1>Register</h1>
-    <input
-      type="email"
-      name="email"
-      v-model="email"
-      placeholder="email" />
-    <br>
-    <input
-      type="password"
-      name="password"
-      v-model="password"
-      placeholder="password" />
-    <br>
-    <div class="error" v-html="error" />
-    <br>
-    <button @click="register">Register</button>
-
-  </div>
-  
+  <v-layout column>
+    <v-flex xs6 offset-xs3>
+        <br>      
+        <div class="pl-4 pr-4 pt-2 pb-2"> 
+          <v-text-field
+            label="Email"
+            v-model="email"
+          ></v-text-field>
+          <br>
+          <v-text-field
+            label="Password"
+            type="password"
+            v-model="password"
+            autocomplete="new-password" />
+          </v-text-field>
+          <br>
+          <div class="error" v-html="error" />
+          <br>
+          <v-btn dark class="cyan" @click="register">
+            Register
+          </v-btn>
+        </div>
+      </div>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -44,7 +49,6 @@ export default {
       }
     }
   }
-
 }
 </script>
 <style scoped>
